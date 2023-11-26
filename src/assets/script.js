@@ -1,4 +1,4 @@
-const profileIcon = document.getElementById("UserProfilePic");
+/*const profileIcon = document.getElementById("UserProfilePic");
 const dropdownMenu = document.getElementById("dropdown-menu");
 
 profileIcon.addEventListener('click', function () {
@@ -82,7 +82,7 @@ fetch('https://api.jsonbin.io/v3/b/65451cf012a5d3765994721c')
 })
 .catch((error) => {
  console.error('Error loading posts:', error);
-});
+});*/
 
 
 /*
