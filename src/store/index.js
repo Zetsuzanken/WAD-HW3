@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import postsData from '@/data/posts.json'
 
 export default createStore({
   state: {
@@ -14,9 +15,7 @@ export default createStore({
   actions: {
     async fetchPosts({ commit }) {
       try {
-        const response = await fetch('https://api.jsonbin.io/v3/b/65451cf012a5d3765994721c');
-        const data = await response.json();
-        commit('setPosts', data.record);
+        commit('setPosts', postsData);
       } catch (error) {
         console.error('Error loading posts:', error);
       }
