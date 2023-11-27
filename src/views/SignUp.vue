@@ -1,6 +1,9 @@
 <template>
     <div class="wrapper">
         <Header></Header>
+        <LeftMargin></LeftMargin>
+        <SignUpBox></SignUpBox>
+        <RightMargin></RightMargin>
         <Footer></Footer>
     </div>
 </template>
@@ -8,16 +11,19 @@
 <script>
 import Footer from "@/components/Footer.vue"
 import Header from "@/components/Header.vue"
+import SignUpBox from "@/components/SignUpBox.vue"
 import LeftMargin from "@/components/LeftMargin.vue"
 import RightMargin from "@/components/RightMargin.vue"
-import Posts from "@/components/Posts.vue"
 
 export default {
     name: "SignUp",
     components: {
-        Header,
-        Footer
-    }
+    Header,
+    LeftMargin,
+    SignUpBox,
+    RightMargin,
+    Footer
+}
 }
 </script>
   
