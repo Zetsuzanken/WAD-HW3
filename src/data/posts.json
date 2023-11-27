@@ -4,14 +4,14 @@
         "author": "John Doe",
         "timestamp": "2023-11-03",
         "text": "Just had a great lunch!",
-        "photo": "@/assets/images/tartu.jpg"
+        "photo": "tartu.jpg"
       },
       {
         "id": 2,
         "author": "Alice Smith",
         "timestamp": "2023-11-02",
         "text": "Tartu 2023",
-        "photo": "@/assets/images/tartu2.jpg"
+        "photo": "tartu2.jpg"
       },
       {
         "id": 3,
@@ -30,7 +30,7 @@
         "author": "Charlie Brown",
         "timestamp": "2023-10-30",
         "text": "Hey, that place looks somewhat familiar?!",
-        "photo": "@/assets/images/tartu.jpg"
+        "photo": "tartu.jpg"
       },
       {
         "id": 6,
@@ -49,14 +49,14 @@
         "author": "Sophia Lee",
         "timestamp": "2023-10-27",
         "text": "Ein jäger a day keeps the doctor away?",
-        "photo": "@/assets/images/tartu.jpg"
+        "photo": "tartu.jpg"
       },
       {
         "id": 9,
         "author": "Michael Garcia",
         "timestamp": "2023-10-26",
         "text": "Visited a beautiful museum today.",
-        "photo": "@/assets/images/tartu2.jpg"
+        "photo": "tartu2.jpg"
       },
       {
         "id": 10,

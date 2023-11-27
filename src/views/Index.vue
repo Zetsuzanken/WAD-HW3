@@ -1,12 +1,10 @@
 <template>
-  <div class="index">
-    <div class="wrapper">
-      <Header></Header>
-      <LeftMargin></LeftMargin>
-      <Posts></Posts>
-      <RightMargin></RightMargin>
-      <Footer></Footer>
-    </div>
+  <div class="wrapper">
+    <Header></Header>
+    <LeftMargin></LeftMargin>
+    <Posts></Posts>
+    <RightMargin></RightMargin>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -51,5 +49,4 @@ body {
   min-height: 100vh;
   position: relative;
 }
-
 </style>

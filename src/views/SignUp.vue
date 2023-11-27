@@ -18,12 +18,12 @@ import RightMargin from "@/components/RightMargin.vue"
 export default {
     name: "SignUp",
     components: {
-    Header,
-    LeftMargin,
-    SignUpBox,
-    RightMargin,
-    Footer
-}
+        Header,
+        LeftMargin,
+        SignUpBox,
+        RightMargin,
+        Footer
+    }
 }
 </script>
   
