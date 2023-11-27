@@ -11,6 +11,12 @@ export default createStore({
     setPosts(state, posts) {
       state.posts = posts.map(post => ({ ...post, likes: 0 }));
     },
+    resetLikes(state) {
+      // Reset likes to zero for all posts
+      state.posts.forEach(post => {
+        post.likes = 0;
+      });
+    },
   },
   actions: {
     async fetchPosts({ commit }) {
@@ -19,6 +25,10 @@ export default createStore({
       } catch (error) {
         console.error('Error loading posts:', error);
       }
+    },
+    resetLikes({ commit }) {
+      // Commit the resetLikes mutation
+      commit('resetLikes');
     },
   },
   modules: {

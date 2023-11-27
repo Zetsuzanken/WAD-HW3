@@ -172,9 +172,9 @@ body {
     display: flex;
 }
 
-.clicked {
-  transform: scale(0.7);
-  transition: transform 0.1s ease-in-out;
+.like-button img:active {
+    transform: scale(0.7);
+    transition: transform 0.1s ease-in-out;
 }
 
 .like-counter {
