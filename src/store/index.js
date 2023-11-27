@@ -9,7 +9,7 @@ export default createStore({
   },
   mutations: {
     setPosts(state, posts) {
-      state.posts = posts;
+      state.posts = posts.map(post => ({ ...post, likes: 0 }));
     },
   },
   actions: {

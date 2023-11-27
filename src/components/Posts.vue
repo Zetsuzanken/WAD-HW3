@@ -15,8 +15,11 @@
                         <p> {{ post.text }} </p>
                     </div>
                 </div>
-                <div class="post-like" @click="likeClicked(post.id)" :class="{ 'clicked': post.isClicked }">
-                    <img class="like-button" src="@/assets/images/like.png" alt="Like Button" />
+                <div class="post-like">
+                    <div class="like-button" @click="likeClicked(post.id)">
+                        <img src="@/assets/images/like.png" alt="Like Button" :class="{ 'clicked': post.isClicked }" />
+                    </div>
+                    <div class="like-counter">{{ post.likes }} likes</div>
                 </div>
             </div>
         </div>
@@ -35,15 +38,12 @@ export default {
         // Trigger the fetchPosts action when the component is mounted
         this.$store.dispatch('fetchPosts');
     },
-
-    
     methods: {
     likeClicked(postId) {
       const post = this.posts.find(post => post.id === postId);
-
       if (post) {
         post.isClicked = true;
-
+        post.likes++;
         setTimeout(() => {
           post.isClicked = false;
         }, 100);
@@ -51,13 +51,9 @@ export default {
     }
   }
 }
-
-
-
-
 </script>
   
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 /* Reset some default styles */
 body,
@@ -81,15 +77,12 @@ body {
     margin: 60px auto 60px;
     padding: 20px;
     position: relative;
-    
 }
 
 .large-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
-    
 }
 
 /* Posts section styles */
@@ -126,9 +119,6 @@ body {
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
-    
-    
-  
 }
 
 .profile-photo {
@@ -137,17 +127,12 @@ body {
     border-radius: 5px;
     border-style: outset;
     border-color: rgb(27, 27, 27);
-    
-    
 }
 
 .post-date {
     color: #999;
     font-size: 12px;
     margin-left: auto;
-    
-    
-    
 }
 
 .post-author {
@@ -156,13 +141,11 @@ body {
     margin-left: 10px;
     flex-wrap: wrap;
     margin-right: 5px;
-    
 }
 
 .post-text {
     margin-bottom: 15px;
     margin-top: 15px;
-    
 }
 
 .post .post-text p {
@@ -171,14 +154,11 @@ body {
 
 .post-like {
     cursor: pointer;
-    transition: transform 0.1s ease-in-out;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 40px; 
-    height: 40px; 
-    
-    
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
 }
 
 .like-button {
@@ -188,14 +168,20 @@ body {
     cursor: pointer;
     border: none;
     background-color: transparent;
-    transition: transform 0.1s ease-in-out;
     outline: none;
     display: flex;
-    
 }
 
 .clicked {
   transform: scale(0.7);
+  transition: transform 0.1s ease-in-out;
+}
+
+.like-counter {
+  color: white;
+  margin-left: auto;
+  align-items: right;
+  font-size: 14px;
 }
 
 /* Styles all paragraph elements that are nested in a div */
