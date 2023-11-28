@@ -11,23 +11,24 @@ export default createStore({
     setPosts(state, posts) {
       state.posts = posts.map(post => ({ ...post, likes: 0 }));
     },
+    // Reset likes to zero for all posts.
     resetLikes(state) {
-      // Reset likes to zero for all posts
       state.posts.forEach(post => {
         post.likes = 0;
       });
     },
   },
   actions: {
-    async fetchPosts({ commit }) {
+    //Data from json file.
+    fetchPosts({ commit }) {
       try {
         commit('setPosts', postsData);
       } catch (error) {
         console.error('Error loading posts:', error);
       }
     },
+    // Commit the resetLikes mutation
     resetLikes({ commit }) {
-      // Commit the resetLikes mutation
       commit('resetLikes');
     },
   },

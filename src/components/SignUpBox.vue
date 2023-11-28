@@ -1,25 +1,26 @@
 <template>
-<div id="signup-flexbox-container">
-            <!-- Sign Up Form -->
-            <div class="signup-form">
-                <form @submit.prevent="onSubmit">
-                    <h2> Sign up <br><br></h2>
-                    <p>Create an account</p>
-                    <input type="email" class="input-field" id="email" placeholder="Email" required>
-                    <br>
-                    <input type="password" class="input-field" id="password" placeholder="Password" v-model="password" :class="{ 'invalid-password': showErrorMessage }" required>
-                    <br>
-                    <button type="submit" class="signup-btn">Sign up</button>
-                    <p class="error-message" v-if="showErrorMessage">Invalid password. <br><br> 
-• The password should be between 8 to 15 characets. <br>
-• One uppercase letter required. <br>
-• Two lowercase letters required. <br>
-• One numeric value required. <br>
-• The password should start with an uppercase letter. <br>
-• The password should include the character “_”</p>
-                </form>
-            </div>
+    <div id="signup-flexbox-container">
+        <!-- Sign Up Form -->
+        <div class="signup-form">
+            <form @submit.prevent="onSubmit">
+                <h2> Sign up <br><br></h2>
+                <p>Create an account</p>
+                <input type="email" class="input-field" id="email" placeholder="Email" required>
+                <br>
+                <input type="password" class="input-field" id="password" placeholder="Password" v-model="password"
+                    :class="{ 'invalid-password': showErrorMessage }" required>
+                <br>
+                <button type="submit" class="signup-btn">Sign up</button>
+                <p class="error-message" v-if="showErrorMessage">Invalid password. <br><br>
+                    • The password should be between 8 to 15 characets. <br>
+                    • One uppercase letter required. <br>
+                    • Two lowercase letters required. <br>
+                    • One numeric value required. <br>
+                    • The password should start with an uppercase letter. <br>
+                    • The password should include the character “_”</p>
+            </form>
         </div>
+    </div>
 </template>
 
 <script>
@@ -39,7 +40,7 @@ export default {
             return regex.test(this.password);
         },
         onSubmit() {
-            if (this.validatePassword()){
+            if (this.validatePassword()) {
                 console.log('Password is valid');
                 this.showErrorMessage = false;
                 router.push('/')
@@ -49,7 +50,7 @@ export default {
             }
         }
     }
-    }
+}
 </script>
 
 <style>
@@ -104,4 +105,11 @@ export default {
     border: 2px solid red;
 }
 
+.signup-btn:hover {
+    background-color: #686767;
+}
+
+.signup-btn:active {
+    transform: scale(0.9);
+}
 </style>

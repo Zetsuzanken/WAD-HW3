@@ -31,6 +31,7 @@ export default {
     name: "Posts",
     computed: {
         posts() {
+            //Retrieves posts from vuex store.
             return this.$store.state.posts;
         }
     },
@@ -39,17 +40,17 @@ export default {
         this.$store.dispatch('fetchPosts');
     },
     methods: {
-    likeClicked(postId) {
-      const post = this.posts.find(post => post.id === postId);
-      if (post) {
-        post.isClicked = true;
-        post.likes++;
-        setTimeout(() => {
-          post.isClicked = false;
-        }, 100);
-      }
+        likeClicked(postId) {
+            const post = this.posts.find(post => post.id === postId);
+            if (post) {
+                post.isClicked = true;
+                post.likes++;
+                setTimeout(() => {
+                    post.isClicked = false;
+                }, 100);
+            }
+        }
     }
-  }
 }
 </script>
   
@@ -127,12 +128,14 @@ body {
     border-radius: 5px;
     border-style: outset;
     border-color: rgb(27, 27, 27);
+    cursor: pointer;
 }
 
 .post-date {
     color: #999;
     font-size: 12px;
     margin-left: auto;
+    padding: 5px;
 }
 
 .post-author {
@@ -141,6 +144,7 @@ body {
     margin-left: 10px;
     flex-wrap: wrap;
     margin-right: 5px;
+    cursor: pointer;
 }
 
 .post-text {
@@ -153,7 +157,6 @@ body {
 }
 
 .post-like {
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -170,6 +173,7 @@ body {
     background-color: transparent;
     outline: none;
     display: flex;
+    padding: 5px;
 }
 
 .like-button img:active {
@@ -178,10 +182,13 @@ body {
 }
 
 .like-counter {
-  color: white;
-  margin-left: auto;
-  align-items: right;
-  font-size: 14px;
+    color: white;
+    margin-left: auto;
+    align-items: right;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(27, 27, 27);
 }
 
 /* Styles all paragraph elements that are nested in a div */

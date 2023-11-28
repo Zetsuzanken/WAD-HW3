@@ -39,10 +39,12 @@ li {
   margin: 0;
   padding: 0;
 }
+
 /* Define overall page styles */
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 /* Wrapper for the entire content */
 .wrapper {
   display: flex;
